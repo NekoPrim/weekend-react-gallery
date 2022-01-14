@@ -4,6 +4,7 @@ import axios from 'axios';
 import './App.css';
 
 import Header from '../Header/Header';
+import GalleryList from '../GalleryList/GalleryList';
 import Footer from '../Footer/Footer';
 
 function App() {
@@ -34,8 +35,9 @@ function App() {
     return (
       <div className="App">
         <Header />
-        <p>Gallery goes here</p>
-        <img src="images/goat_small.jpg"/>
+        {/* <p>Gallery goes here</p>
+        <img src="images/goat_small.jpg"/> */}
+        <GalleryList list={gallery}/>
         <Footer />
       </div>
     );
