@@ -1,11 +1,11 @@
+import GalleryItem from './GalleryItem/GalleryItem';
+
 const GalleryList = ({list}) => {
     return (
         <div>
             {
                 list.map(picture => (
-                    <div key={picture.id}>
-                        <img src={picture.path}/> 
-                    </div>
+                    <GalleryItem key={picture.id} picture={picture} />
                 ))
             }
         </div>
