@@ -34,11 +34,12 @@ function App() {
   }, []);
 
   // function to toggle between pith and description
-  const moreLikes = () => {
-    axios.put(`/gallery/${id}`)
-      .then(() => {
+  const moreLikes = (id) => {
+    console.log('in moreLikes', id);
+    axios.put(`/gallery/like/${id}`)
+      .then((res) => {
         // tell client of success
-        console.log('axios PUT success');
+        console.log('axios PUT success', res);
 
         // reload gallery
         fetchGallery();
