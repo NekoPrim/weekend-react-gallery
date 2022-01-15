@@ -12,7 +12,7 @@ function App() {
   // store data
   const [gallery, setGallery] = useState([]);
 
-  // function to recieve data from in house database
+  // function to receive data from in house database
   const fetchGallery = () => {
     axios.get('/gallery')
       .then((res) => {
@@ -28,16 +28,33 @@ function App() {
       });
   }
 
+  // call function to store data
   useEffect(() => {
     fetchGallery();
   }, []);
+
+  // function to toggle between pith and description
+  const moreLikes = () => {
+    axios.put(`/gallery/${id}`)
+      .then(() => {
+        // tell client of success
+        console.log('axios PUT success');
+
+        // reload gallery
+        fetchGallery();
+      })
+      .catch((err) => {
+        // tell client of failure
+        console.log('axios PUT ERROR', err);
+      })
+  }
 
     return (
       <div className="App">
         <Header />
         {/* <p>Gallery goes here</p>
         <img src="images/goat_small.jpg"/> */}
-        <GalleryList list={gallery}/>
+        <GalleryList list={gallery} moreLikes={moreLikes} fetchGallery={fetchGallery} />
         <Footer />
       </div>
     );
