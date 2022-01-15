@@ -1,0 +1,10 @@
+.displayArea {
+    border: 2px solid black;
+    height: 300px;
+    margin: 1rem;
+    width: 200px;
+}
+
+.toggleArea {
+    height: 200px;
+}
