@@ -1,11 +1,14 @@
 import GalleryItem from './GalleryItem/GalleryItem';
 
-const GalleryList = ({list}) => {
+import './GalleryList.css';
+
+const GalleryList = ({list, moreLikes, fetchGallery}) => {
+    // loop through gallery
     return (
-        <div>
+        <div className="galleryArea">
             {
                 list.map(picture => (
-                    <GalleryItem key={picture.id} picture={picture} />
+                    <GalleryItem key={picture.id} picture={picture} moreLikes={moreLikes} fetchGallery={fetchGallery} />
                 ))
             }
         </div>
