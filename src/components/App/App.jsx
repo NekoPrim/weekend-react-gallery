@@ -4,6 +4,7 @@ import axios from 'axios';
 import './App.css';
 
 import Header from '../Header/Header';
+import GalleryForm from '../GalleryForm/GalleryForm';
 import GalleryList from '../GalleryList/GalleryList';
 import Footer from '../Footer/Footer';
 
@@ -12,8 +13,9 @@ function App() {
   // store data
   const [gallery, setGallery] = useState([]);
 
-  // function to receive data from in house database
+  // function to receive data from database
   const fetchGallery = () => {
+    // receive data from server side
     axios.get('/gallery')
       .then((res) => {
         // tell client of success
@@ -33,9 +35,28 @@ function App() {
     fetchGallery();
   }, []);
 
-  // function to toggle between pith and description
+  // function to add data to the database
+  const addGallery = (newItem) => {
+    // check data
+    console.log('sent data from form:', newItem);
+    // send to server
+    axios.post('/gallery', newItem)
+      .then(() => {
+        // tell client of success
+        console.log('axios POST success!');
+        // reload list
+        fetchGallery();
+      })
+      .catch((err) => {
+        // tell client of failure
+        console.log('axios POST ERROR!', err);
+      })
+  }
+
+  // function to update likes
   const moreLikes = (id) => {
     console.log('in moreLikes', id);
+    // send data to server side
     axios.put(`/gallery/like/${id}`)
       .then((res) => {
         // tell client of success
@@ -53,6 +74,7 @@ function App() {
     return (
       <div className="App">
         <Header />
+        <GalleryForm addGallery={addGallery} />
         {/* <p>Gallery goes here</p>
         <img src="images/goat_small.jpg"/> */}
         <GalleryList list={gallery} moreLikes={moreLikes} fetchGallery={fetchGallery} />
