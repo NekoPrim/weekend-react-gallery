@@ -7,6 +7,7 @@ const Likes = ({picture, moreLikes, fetchGallery}) => {
     const onLike = (picture) => {
         console.log('in onLike', picture.id);
         moreLikes(picture.id);
+        fetchGallery();
     }
 
     return (

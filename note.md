@@ -17,9 +17,9 @@
     [X] When the like button is clicked, use `Axios` to update (`PUT`) the like count `/gallery/like/:id`.
     [X] Update the gallery each time a like button is clicked.
     **STRETCH**
-[ ] Move the data into a database (postgresql)
+[X] Move the data into a database (postgresql)
     [X] name your database `react_gallery`
-    [ ] include a `database.sql` file documenting your database tables
+    [X] include a `database.sql` file documenting your database tables
 [ ] Add a form (new **component**) that allows a user to POST a new gallery item
     [ ] Client side form (use absolute URL for images)
     [ ] Server side route for posting an image
