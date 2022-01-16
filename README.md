@@ -1,4 +1,4 @@
-# Project Name
+# Weekend-React-Gallery
 Street art is everywhere and can be super inspiring. In this API, you can browse through some street art images.  Add more images with descriptions to build an even larger library to browse.  Clicking on a picture will switch to details about that image.  Also don't forget to show our urban artist some love by clicking on the like button! There is an option to delete if you really want.  
 
 Here we want to celebrate and admire street art around the world! 
