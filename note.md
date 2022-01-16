@@ -18,7 +18,7 @@
     [X] Update the gallery each time a like button is clicked.
     **STRETCH**
 [ ] Move the data into a database (postgresql)
-    [ ] name your database `react_gallery`
+    [X] name your database `react_gallery`
     [ ] include a `database.sql` file documenting your database tables
 [ ] Add a form (new **component**) that allows a user to POST a new gallery item
     [ ] Client side form (use absolute URL for images)
