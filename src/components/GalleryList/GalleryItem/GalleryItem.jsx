@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 
 import './GalleryItem.css';
-import Likes from './Likes/Likes';
+import LikeItem from './LikeItem/LikeItem';
 
-const GalleryItem = ({picture, moreLikes, fetchGallery}) => {
+const GalleryItem = ({picture, moreLikes, fetchGallery, deleteGallery}) => {
 
     const [toggle, setToggle] = useState(true);
 
@@ -12,7 +12,7 @@ const GalleryItem = ({picture, moreLikes, fetchGallery}) => {
             <div className="toggleArea" onClick={() => setToggle(!toggle)}>
                 {toggle ? <img className="pic" src={picture.url} /> : <h4>{picture.description}</h4>}
             </div>
-            <Likes key={picture.id} picture={picture} moreLikes={moreLikes} fetchGallery={fetchGallery} />
+            <LikeItem picture={picture} moreLikes={moreLikes} fetchGallery={fetchGallery} deleteGallery={deleteGallery} />
         </div>
     );
 }

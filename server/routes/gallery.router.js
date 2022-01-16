@@ -81,14 +81,38 @@ router.post('/', (req, res) => {
     pool.query(queryText, queryParams)
         .then((dbRes) => {
             // tell client of success
-            console.log('data from database', dbRes);
+            console.log('data from database');
             res.sendStatus(201);
         })
         .catch((err) => {
             // tell client of failure
             console.log('pool POST ERROR', err);
             res.sendStatus(500);
+        });
+});// end POST route
+
+// DELETE
+router.delete('/:id', (req, res) => {
+
+    const queryText = `
+        DELETE FROM "gallery"
+        WHERE "id" = $1;
+    `;
+
+    const queryParams = [ req.params.id ];
+
+    // sent request to database
+    pool.query(queryText, queryParams)
+        .then((dbRes) => {
+            // tell client of success
+            console.log('pool DELETE success!');
+            res.sendStatus(201);
         })
-})
+        .catch((err) => {
+            // tell client of failure
+            console.log('pool DELETE ERROR!', err);
+            res.sendStatus(500);
+        });
+});// end DELETE route
 
 module.exports = router;
