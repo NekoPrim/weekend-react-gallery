@@ -1,0 +1,21 @@
+.buttonArea {
+    align-items: center;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.like {
+    background-color: green;
+    height: 2rem;
+    margin: 0.5rem;
+    width: 5rem;
+}
+
+.likeText {
+    align-items: center;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}

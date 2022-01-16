@@ -1,9 +1,12 @@
 # Project Name
+Street art is everywhere and can be super inspiring. Here we want to celebrate and admire street art around the world! 
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+[Project Instructions](./INSTRUCTIONS.md)
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This API you can browse through street art images.  Clicking on a picture will switch to details about that image.  Also don't forget to show our urban artist some love by clicking on the like button!
+
+(./API.png)
 
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
