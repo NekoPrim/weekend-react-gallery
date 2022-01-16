@@ -3,7 +3,7 @@ import './Footer.css';
 const Footer = () => {
     return (
         <footer>
-            <p>"Maybe you have to know the darkness before you can appreciate the light" - Madeline L'Engle</p>
+            <p>"Street art is nothing else but urban poetry that catches someone's eye" - Christian Guémy</p>
         </footer>
     );
 }
