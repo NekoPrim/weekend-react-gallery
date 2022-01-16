@@ -17,5 +17,7 @@
     align-items: center;
     background-color: white;
     display: flex;
+    font-family: 'Rock Salt', cursive;
+    font-size: 11.5px;
     justify-content: center;
 }

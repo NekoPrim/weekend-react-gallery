@@ -59,4 +59,36 @@ router.get('/', (req, res) => {
         });
 }); // END GET Route
 
+// POST
+router.post('/', (req, res) => {
+    // check data sent
+    console.log(req.body);
+
+    queryText = `
+    INSERT INTO "gallery"
+    ("title", "url", "description")
+    VALUES
+    ($1. $2, $3);
+    `;
+
+    queryParams = [
+        req.body.title,
+        req.body.url,
+        req.body.description
+    ];
+
+    // sent data to database
+    pool.query(queryText, queryParams)
+        .then((dbRes) => {
+            // tell client of success
+            console.log('data from database', dbRes);
+            res.sendStatus(201);
+        })
+        .catch((err) => {
+            // tell client of failure
+            console.log('pool POST ERROR', err);
+            res.sendStatus(500);
+        })
+})
+
 module.exports = router;
