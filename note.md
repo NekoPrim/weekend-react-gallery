@@ -16,5 +16,15 @@
     [X] Display the number likes for each item and include a like button.
     [X] When the like button is clicked, use `Axios` to update (`PUT`) the like count `/gallery/like/:id`.
     [X] Update the gallery each time a like button is clicked.
+    **STRETCH**
+[ ] Move the data into a database (postgresql)
+    [ ] name your database `react_gallery`
+    [ ] include a `database.sql` file documenting your database tables
+[ ] Add a form (new **component**) that allows a user to POST a new gallery item
+    [ ] Client side form (use absolute URL for images)
+    [ ] Server side route for posting an image
+[ ] Ability to delete a gallery item
+[ ] Add styling with Material-UI [https://material-ui.com/](https://material-ui.com/)
+[ ] Implement [uppy](https://uppy.io/) for image upload 
 
 
