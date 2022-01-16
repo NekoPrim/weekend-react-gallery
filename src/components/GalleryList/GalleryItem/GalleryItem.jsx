@@ -10,7 +10,7 @@ const GalleryItem = ({picture, moreLikes, fetchGallery}) => {
     return(
         <div key={picture.id} className="displayArea">
             <div className="toggleArea" onClick={() => setToggle(!toggle)}>
-                {toggle ? <img src={picture.path} /> : <h4>{picture.description}</h4>}
+                {toggle ? <img className="pic" src={picture.url} /> : <h4>{picture.description}</h4>}
             </div>
             <Likes key={picture.id} picture={picture} moreLikes={moreLikes} fetchGallery={fetchGallery} />
         </div>
