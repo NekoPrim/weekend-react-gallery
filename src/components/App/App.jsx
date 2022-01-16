@@ -28,7 +28,7 @@ function App() {
         // tell client of failure
         console.log('axios GET ERROR!', err);
       });
-  }
+  }// end fetchGallery function
 
   // call function to store data
   useEffect(() => {
@@ -50,8 +50,8 @@ function App() {
       .catch((err) => {
         // tell client of failure
         console.log('axios POST ERROR!', err);
-      })
-  }
+      });
+  }// end addGallery function
 
   // function to update likes
   const moreLikes = (id) => {
@@ -68,8 +68,25 @@ function App() {
       .catch((err) => {
         // tell client of failure
         console.log('axios PUT ERROR', err);
+      });
+  }// end moreLikes function
+
+  // function to delete gallery item
+  const deleteGallery = (id) => {
+    console.log('in deleteGallery:', id);
+    // send data to server side
+    axios.delete(`/gallery/${id}`)
+      .then((res) => {
+        // tell client of success
+        console.log('axios DELETE success!');
+        // reload page
+        fetchGallery();
       })
-  }
+      .catch((err) => {
+        // tell client of failure
+        console.log('axios DELETE ERROR!', err);
+      });
+  }// end deleteGallery function
 
     return (
       <div className="App">
@@ -77,7 +94,7 @@ function App() {
         <GalleryForm addGallery={addGallery} />
         {/* <p>Gallery goes here</p>
         <img src="images/goat_small.jpg"/> */}
-        <GalleryList list={gallery} moreLikes={moreLikes} fetchGallery={fetchGallery} />
+        <GalleryList list={gallery} moreLikes={moreLikes} fetchGallery={fetchGallery} deleteGallery={deleteGallery} />
         <Footer />
       </div>
     );
