@@ -68,7 +68,7 @@ router.post('/', (req, res) => {
     INSERT INTO "gallery"
     ("title", "url", "description")
     VALUES
-    ($1. $2, $3);
+    ($1, $2, $3);
     `;
 
     queryParams = [
